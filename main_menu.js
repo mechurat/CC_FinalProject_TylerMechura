@@ -3,6 +3,9 @@ function Main() {
   this.show = function () {
 
   }
+  this.update = function () {
+
+  }
   this.startButton = function () {
 
   }
