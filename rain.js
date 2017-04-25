@@ -1,10 +1,10 @@
 function Rain() {
 
 
-  this.show() {
+  this.show = function () {
 
   }
-  this.update() {
+  this.update = function () {
 
   }
 
