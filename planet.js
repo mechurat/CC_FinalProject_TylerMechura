@@ -1,11 +1,9 @@
 function Planet() {
-
-  this.colors = ['#AD78B2', '#FFF7DF', '#89CCBC', '#81B2A7'];
-
+  this.colorArray = ['#AD78B2', '#FFF7DF', '#89CCBC', '#81B2A7'];
+  this.planetColor = this.colorArray[int(random(0, 3))];
   this.size = random(width / 1.8, height / 1.8);
   this.center = createVector(width / 2, height / 2);
   this.strokeWeight = random(5, 20);
-  this.planetColor = color(this.colors[random(0, 3)]);
 
   this.show = function () {
     strokeWeight(this.strokeWeight);
