@@ -1,12 +1,17 @@
 function Planet() {
 
-  this.size = random(width / 1.2, height / 1.2);
-  this.center = createVector(windowWidth / 2, windowHeight / 2);
+  this.colors = ['#AD78B2', '#FFF7DF', '#89CCBC', '#81B2A7'];
+
+  this.size = random(width / 1.8, height / 1.8);
+  this.center = createVector(width / 2, height / 2);
+  this.strokeWeight = random(5, 20);
+  this.planetColor = color(this.colors[random(0, 3)]);
 
   this.show = function () {
-    noStroke();
-    fill(255);
-    ellipse(this.center.x, this.center.y, this.size);
+    strokeWeight(this.strokeWeight);
+    stroke(90);
+    fill(this.planetColor);
+    ellipse(this.center.x, this.center.y, this.size, this.size);
     // more will be added later. This is part of the 'skeleton structure'
     // I want to finish the fuctionality before I start adding style
   }
@@ -23,7 +28,10 @@ function Planet() {
   }
 
   this.changePlanet = function () {
-
+    // use map() to resize the circle. Keep the original value stored in global
+    // move the circle's origin towards corner of the key pressed
+    // UP_ARROW = top right corner
+    // DOWN_ARROW = bottom left corner
   }
 
 }
