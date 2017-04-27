@@ -21,6 +21,7 @@ function draw() {
   if (seed != null) {
     seed.show();
     seed.update();
+//    console.log('seed location: ' + seed.location.x + ' ' + seed.location.y);
   }
   //  console.log('Planet[0] color =  ' + planets[0].planetColor);
   //  planets[0].show();
@@ -35,7 +36,7 @@ function keyPressed() {
 function mousePressed() {
   //  seed = new Seed();
   seed = new Seed(planets[0].size / 2 - 5);
-  console.log(width / 2 + ' ' + height / 2);
+  console.log('centerX: ' + width / 2 + '\ncenterY: ' + height / 2);
   console.log('width: ' + width + '\nheight: ' + height);
   console.log(seed.detectPlanet(planets[0].size / 2 - 5));
 }

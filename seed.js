@@ -32,6 +32,9 @@ function Seed(planetRadius) {
   // these are defined as windowWidth and windowHeight in 'sketch.js'
   var velX = map(moveToCenter.x, width * -1, width, width / 80 * -1, width / 80);
   var velY = map(moveToCenter.y, height * -1, height, height / 80 * -1, height / 80);
+
+  // distance from the initial point of the seed
+  var distance = sqrt(pow(this.location.x - center.x, 2) + pow(this.location.y - center.y, 2));
   // final velocity of seed from mouse point click
   this.velocity = createVector(velX, velY);
 
@@ -59,9 +62,10 @@ function Seed(planetRadius) {
     // vector component subtracted
     var s = this.location.x - center.x;
     var t = this.location.y - center.y;
-    // vector components normalized
-    var s2 = s / sqrt(pow(s, 2) + pow(t, 2));
-    var t2 = t / sqrt(pow(s, 2) + pow(t, 2));
+
+    // vector components normalized using private 'distance'
+    var s2 = s / distance;
+    var t2 = t / distance;
 
     // X point of Radius
     var s3 = s2 * planetRadius;
@@ -75,16 +79,16 @@ function Seed(planetRadius) {
   }
 
   this.stopMovement = function () {
-    if ((this.location.x < planetRadius && this.location.x > planetRadius) ||
-      (this.location.x > planetRadius && this.location.x < planetRadius)) {
+
+    // use Euclidian Distance formula to detect distance
+    // distance from the center of the planet to the location of the seed
+    var distanceUpdating = sqrt(pow(this.location.x - center.x, 2) + pow(this.location.y - center.y, 2));
+    // logging distance for testing
+    // console.log(distance);
+    if (distanceUpdating < planetRadius) {
       this.velocity.x = 0;
       this.velocity.y = 0;
     }
-    //    if (this.location.x < planetEdge.x) {
-    //      this.velocity.x = 0;
-    //      this.velocity.y = 0;
-    //    }
-
   }
 
 }
