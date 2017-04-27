@@ -16,9 +16,14 @@ function setup() {
 }
 
 function draw() {
-  background('#FAC5FF');
+  background('#FAC5FF'); // very light pink
+  if (seed != null) {
+    seed.show();
+    seed.update();
+  }
   //  console.log('Planet[0] color =  ' + planets[0].planetColor);
   planets[0].show();
+
 }
 
 function keyPressed() {
@@ -28,4 +33,5 @@ function keyPressed() {
 
 function mousePressed() {
   //  seed = new Seed();
+  seed = new Seed();
 }
