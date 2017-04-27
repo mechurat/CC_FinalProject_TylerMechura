@@ -1,4 +1,4 @@
-function Seed() {
+function Seed(planetRadius) {
 
   ////////////////////
   // INITIALIZATION //
@@ -46,7 +46,7 @@ function Seed() {
   }
   this.update = function () {
     this.location.add(this.velocity);
-    if
+    this.stopMovement();
   }
 
   // functions needed:
@@ -54,6 +54,37 @@ function Seed() {
   // delete seed?
   // record location?
 
-  // record when seed hits 'planet'
-  // 
+  // returns the point as a vector at which the seed hits the planet
+  this.detectPlanet = function (planetRadius) {
+    // vector component subtracted
+    var s = this.location.x - center.x;
+    var t = this.location.y - center.y;
+    // vector components normalized
+    var s2 = s / sqrt(pow(s, 2) + pow(t, 2));
+    var t2 = t / sqrt(pow(s, 2) + pow(t, 2));
+
+    // X point of Radius
+    var s3 = s2 * planetRadius;
+    // Y point of Radius
+    var t3 = t2 * planetRadius;
+
+    // vector at edge of planet
+    var planetEdge = createVector(s3 + center.x, t3 + center.y);
+    return planetEdge;
+
+  }
+
+  this.stopMovement = function () {
+    if ((this.location.x < planetRadius && this.location.x > planetRadius) ||
+      (this.location.x > planetRadius && this.location.x < planetRadius)) {
+      this.velocity.x = 0;
+      this.velocity.y = 0;
+    }
+    //    if (this.location.x < planetEdge.x) {
+    //      this.velocity.x = 0;
+    //      this.velocity.y = 0;
+    //    }
+
+  }
+
 }
