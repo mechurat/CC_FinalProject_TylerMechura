@@ -79,7 +79,14 @@ function keyPressed() {
 }
 
 function mousePressed() {
-
+  // mousePressed if statement for Start Button
+  if (menu != null &&
+    mouseX > menu.startButton.x &&
+    mouseX < menu.startButton.x + 220 &&
+    mouseY > menu.startButton.y &&
+    mouseY < menu.startButton.y + 90) {
+    menu.alpha -= 3;
+  }
   // create a new seed if menu is not present
   // parameter tells the seed where to stop by calculating the distance
   if (menu == null) {
