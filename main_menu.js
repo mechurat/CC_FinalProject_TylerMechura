@@ -52,7 +52,7 @@ function Main_Menu() {
     line4: "2. Clicking around a planet will drop a seed, only one seed can be placed at a time.",
     line4: "3. Pressing the Up or Down arrows will switch planets",
     line5: "That's really all you need to know! Future updates planned:",
-    line6: "Planet Change animation\nOptions Menu for music\nAdded sounds\nRecursive trees\nWeather and Particles"
+    line6: "Planet Change animation\nOptions Menu for Volume Control\nAdd Sound FX\nRecursive trees\nWeather and Particles"
   }
 
   ///////////////
