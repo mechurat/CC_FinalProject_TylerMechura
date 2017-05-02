@@ -42,6 +42,19 @@ function Main_Menu() {
     tY: height / 2 + 80,
   }
 
+  // instructions
+  this.instructions = {
+    x: width / 3,
+    y: height / 3 * 2 - height / 8,
+    line1: "Welcome to Phloria, a small game by Tyler Mechura",
+    line2: "Controls",
+    line3: "1. Press Esc to Open this screen at any time",
+    line4: "2. Clicking around a planet will drop a seed, only one seed can be placed at a time.",
+    line4: "3. Pressing the Up or Down arrows will switch planets",
+    line5: "That's really all you need to know! Future updates planned:",
+    line6: "Planet Change animation\nOptions Menu for music\nAdded sounds\nRecursive trees\nWeather and Particles"
+  }
+
   ///////////////
   // FUNCTIONS //
   ///////////////
@@ -53,6 +66,7 @@ function Main_Menu() {
     this.titleObject();
     this.start();
     //    this.options();
+    this.info();
   }
   this.update = function () {
     if (this.alpha < 255) {
@@ -81,5 +95,19 @@ function Main_Menu() {
     textSize(this.title.textSize);
     fill(255, this.alpha);
     text(this.title.text, this.title.x, this.title.y);
+  }
+
+  this.info = function () {
+    noStroke();
+    fill(250, this.alpha);
+    textSize(24);
+    text(this.instructions.line1, this.instructions.x, this.instructions.y);
+    textSize(48);
+    text(this.instructions.line2, this.instructions.x, this.instructions.y + 60);
+    textSize(24);
+    text(this.instructions.line3, this.instructions.x, this.instructions.y + 100);
+    text(this.instructions.line4, this.instructions.x, this.instructions.y + 150);
+    text(this.instructions.line5, this.instructions.x, this.instructions.y + 190);
+    text(this.instructions.line6, this.instructions.x, this.instructions.y + 280);
   }
 }
