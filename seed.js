@@ -42,6 +42,7 @@ function Seed(planetRadius) {
   var distance = sqrt(pow(this.location.x - center.x, 2) + pow(this.location.y - center.y, 2));
   // final velocity of seed from mouse point click
   this.velocity = createVector(velX, velY);
+  this.velocity.limit(3);
 
   ///////////////
   // FUNCTIONS //

@@ -17,6 +17,7 @@ function Tree(growthPoint, seedClickPoint) {
   // calculation variables
   this.growthDirection = p5.Vector.sub(growthPoint, seedClickPoint);
   this.growthSpeed = createVector(this.growthDirection.x * .008, this.growthDirection.y * .008);
+  this.growthSpeed.limit(.5);
 
   // Define distance to split branches at
   var splitTime = random(60, 90);
