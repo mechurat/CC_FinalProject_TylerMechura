@@ -2,6 +2,7 @@ var planets = [];
 var seed;
 var cloud;
 var shownPlanet;
+var menu;
 
 function preload() {
 
@@ -14,11 +15,12 @@ function setup() {
     console.log('Planet ' + i + ' made.');
   }
   shownPlanet = 0;
+  menu = new Main_Menu();
 }
 
 function draw() {
   background('#FAC5FF'); // very light pink
-  //  frameRate(30);
+  frameRate(60);
   // planets[shownPlanet].show(); // temporary, keeping seed above planet for testing points
   if (seed != null) {
     seed.show();
@@ -41,6 +43,15 @@ function draw() {
   // show planet last, removes viewing the 'tree' growing on the surface
   planets[shownPlanet].show();
 
+  if (menu != null) {
+    menu.show();
+    if (menu.alpha < 255) {
+      menu.update();
+      if (menu.alpha == 0) {
+        menu = null;
+      }
+    }
+  }
 }
 
 function keyPressed() {
@@ -59,15 +70,23 @@ function keyPressed() {
       shownPlanet = 9;
     }
   }
+  if (menu == null && keyCode === ESCAPE) {
+    menu = new Main_Menu();
+  } else if (menu != null && keyCode === ESCAPE) {
+    menu.alpha -= 3;
+  }
 
 }
 
 function mousePressed() {
-  //  seed = new Seed();
-  // create a new seed
+
+  // create a new seed if menu is not present
   // parameter tells the seed where to stop by calculating the distance
-  seed = new Seed(planets[shownPlanet].size / 2 - 5);
-  console.log('centerX: ' + width / 2 + '\ncenterY: ' + height / 2);
-  console.log('width: ' + width + '\nheight: ' + height);
-  console.log(seed.detectPlanet(planets[shownPlanet].size / 2 - 5));
+  if (menu == null) {
+    seed = new Seed(planets[shownPlanet].size / 2 - 5);
+    console.log('centerX: ' + width / 2 + '\ncenterY: ' + height / 2);
+    console.log('width: ' + width + '\nheight: ' + height);
+    console.log(seed.detectPlanet(planets[shownPlanet].size / 2 - 5));
+  }
+
 }
