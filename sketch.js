@@ -60,19 +60,25 @@ function keyPressed() {
   // want to add animation for switching planets.
   if (keyCode === UP_ARROW) {
     shownPlanet += 1;
+    // hit top of array? Reset back to first
     if (shownPlanet > 9) {
       shownPlanet = 0;
     }
   }
   if (keyCode === DOWN_ARROW) {
     shownPlanet -= 1;
+    // hit bottom of array? Reset back to top
     if (shownPlanet < 0) {
       shownPlanet = 9;
     }
   }
+
+  // create a new main menu if ESCAPE is pressed and menu exists as null
   if (menu == null && keyCode === ESCAPE) {
     menu = new Main_Menu();
-  } else if (menu != null && keyCode === ESCAPE) {
+  }
+  // leave the main menu if the escape key is pressed
+  else if (menu != null && keyCode === ESCAPE) {
     menu.alpha -= 3;
   }
 

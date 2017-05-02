@@ -65,6 +65,7 @@ function Tree(growthPoint, seedClickPoint) {
 
   }
 
+  // FUCK this thing. Right here. FUCK this. 15 hours (not including time spent researching and reading) and however many renditions and I still can't get it working with my project.
   this.recursiveTree = function (start, growPoint, stopAt, speed) {
     // using Daniel Shiffman's recursive tree example from 
     // https://processing.org/examples/tree.html

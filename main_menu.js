@@ -62,6 +62,7 @@ function Main_Menu() {
 
 
   this.start = function () {
+    // basic formatting stuff. Do I really need to tell you what this does?
     noStroke();
     fill(255, 246, 223, this.alpha);
     rect(this.startButton.x, this.startButton.y, this.startButton.w, this.startButton.h, 10);
@@ -73,11 +74,10 @@ function Main_Menu() {
   }
 
   this.options = function () {
-
+    // EMPTY. OH NO
   }
 
   this.titleObject = function () {
-    // using object this.title to fill in this.title function O.o;
     textSize(this.title.textSize);
     fill(255, this.alpha);
     text(this.title.text, this.title.x, this.title.y);
