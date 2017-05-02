@@ -13,9 +13,9 @@ function Main_Menu() {
   // Title
   this.title = {
     text: "Phloria",
-    x: width / 2 - 120,
-    y: 100,
-    textSize: 72,
+    x: width / 2 - 195,
+    y: 300,
+    textSize: 128,
     c: '#FFFFFF'
   }
   // Two Buttons

@@ -20,7 +20,7 @@ function Tree(growthPoint, seedClickPoint) {
   this.growthSpeed.limit(.5);
 
   // Define distance to split branches at
-  var splitTime = random(60, 90);
+  var splitTime = random(45, 150);
 
   // defining the angle to split the branches
   var splitAngle = random(0, 90);
