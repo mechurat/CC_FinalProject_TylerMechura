@@ -4,11 +4,19 @@ var cloud;
 var shownPlanet;
 var menu;
 
+var music;
+
 function preload() {
 
+  // music tutorial courtesy of p5js.org
+  // https://p5js.org/reference/#/libraries/p5.sound
+  music = loadSound("assets/music/03 Peaceful Sleep.m4a");
 }
 
 function setup() {
+  music.setVolume(.1);
+  music.playMode('sustain');
+  music.play();
   createCanvas(windowWidth, windowHeight);
   for (var i = 0; i < 10; i++) {
     planets[i] = new Planet();
