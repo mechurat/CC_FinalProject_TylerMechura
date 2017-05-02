@@ -50,9 +50,9 @@ function Main_Menu() {
     line2: "Controls",
     line3: "1. Press Esc to Open this screen at any time",
     line4: "2. Clicking around a planet will drop a seed, only one seed can be placed at a time.",
-    line4: "3. Pressing the Up or Down arrows will switch planets",
-    line5: "That's really all you need to know! Future updates planned:",
-    line6: "Planet Change animation\nOptions Menu for Volume Control\nAdd Sound FX\nRecursive trees\nWeather and Particles"
+    line5: "3. Pressing the Up or Down arrows will switch planets",
+    line6: "That's really all you need to know! Future updates planned:",
+    line7: "Planet Change animation\nOptions Menu for Volume Control\nAdd Sound FX\nRecursive trees\nWeather and Particles"
   }
 
   ///////////////
@@ -106,8 +106,9 @@ function Main_Menu() {
     text(this.instructions.line2, this.instructions.x, this.instructions.y + 60);
     textSize(24);
     text(this.instructions.line3, this.instructions.x, this.instructions.y + 100);
-    text(this.instructions.line4, this.instructions.x, this.instructions.y + 150);
-    text(this.instructions.line5, this.instructions.x, this.instructions.y + 190);
-    text(this.instructions.line6, this.instructions.x, this.instructions.y + 280);
+    text(this.instructions.line4, this.instructions.x, this.instructions.y + 135);
+    text(this.instructions.line5, this.instructions.x, this.instructions.y + 170);
+    text(this.instructions.line6, this.instructions.x, this.instructions.y + 220);
+    text(this.instructions.line7, this.instructions.x, this.instructions.y + 320);
   }
 }
