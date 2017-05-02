@@ -15,8 +15,8 @@ function preload() {
 
 function setup() {
   music.setVolume(.1);
-  music.playMode('sustain');
-  music.play();
+  music.playMode('restart');
+  music.loop();
   createCanvas(windowWidth, windowHeight);
   for (var i = 0; i < 10; i++) {
     planets[i] = new Planet();
@@ -29,6 +29,10 @@ function setup() {
 function draw() {
   background('#FAC5FF'); // very light pink
   frameRate(60);
+
+  if (music.isPlaying() == false) {
+    music.loop();
+  }
   // planets[shownPlanet].show(); // temporary, keeping seed above planet for testing points
   if (seed != null) {
     seed.show();
