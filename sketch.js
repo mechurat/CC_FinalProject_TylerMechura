@@ -22,9 +22,16 @@ function draw() {
     seed.show();
     seed.update();
 //    console.log('seed location: ' + seed.location.x + ' ' + seed.location.y);
+    if(seed.velocity.x == 0 && seed.velocity.y == 0){
+      trees.push( new Tree(seed.location, seed.startPoint));
+    }
+  }
+  if( trees[0] != null){
+    trees[0].show();
+    trees[0].update();
   }
   //  console.log('Planet[0] color =  ' + planets[0].planetColor);
-  //  planets[0].show();
+//    planets[0].show();
 
 }
 

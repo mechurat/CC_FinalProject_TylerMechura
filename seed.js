@@ -6,6 +6,11 @@ function Seed(planetRadius) {
 
   // initial drop point of the seed.
   this.location = createVector(mouseX, mouseY);
+
+  // for use with Tree;
+  this.startPoint = createVector(mouseX, mouseY);
+
+  // Points for vector graphics
   var p1 = {
     x: mouseX,
     y: mouseY
