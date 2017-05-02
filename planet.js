@@ -1,10 +1,23 @@
 function Planet() {
+
+  ////////////////////
+  // INITIALIZATION //
+  ////////////////////
+
   this.colorArray = ['#AD78B2', '#FFF7DF', '#89CCBC', '#81B2A7']; // array of colors. See URL below for portfolio scheme picker. #FAC5FF reserved for background
   // https://color.adobe.com/Creative-Coding-Final-Project-Colors-color-theme-9496388/
   this.planetColor = this.colorArray[int(random(0, 3))];
   this.size = random(width / 3, height / 3);
   this.center = createVector(width / 2, height / 2);
   this.strokeWeight = random(5, 20);
+
+  //arrays of Trees related to that planet
+  this.trees = [];
+
+
+  ///////////////
+  // FUNCTIONS //
+  ///////////////
 
   this.show = function () {
     strokeWeight(this.strokeWeight);
@@ -13,9 +26,7 @@ function Planet() {
     ellipse(this.center.x, this.center.y, this.size, this.size);
     // more will be added later. This is part of the 'skeleton structure'
   }
-  this.update = function () {
-
-  }
+  this.update = function () {}
 
 
   // what will show that the planet is rotating?
