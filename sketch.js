@@ -10,7 +10,7 @@ function preload() {
 
   // music tutorial courtesy of p5js.org
   // https://p5js.org/reference/#/libraries/p5.sound
-  music = loadSound("assets/music/03 Peaceful Sleep.m4a");
+  music = loadSound("assets/music/35 Fortress of Lies.m4a");
 }
 
 function setup() {
